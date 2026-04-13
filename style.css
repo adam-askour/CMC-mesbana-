@@ -63,8 +63,6 @@
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeUp 1s ease;
-            margin-left: 80px;
-            margin-right: 80px;
         }
         
         .contact-info:hover {
@@ -123,8 +121,6 @@
             animation: fadeIn 0.8s ease-out;
             overflow-y: auto;
             height: 630px;
-            margin-left: 80px;
-            margin-right: 80px;
         }
         
         @keyframes fadeIn {
@@ -349,3 +345,85 @@
             color: var(--text-gray);
             opacity: 0.8;
         }
+
+        /* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+/* Desktop Layout */
+@media (min-width: 900px) {
+    body {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .contact-info {
+        max-width: 450px;
+        margin: 0;
+    }
+
+    .form-container {
+        max-width: 450px;
+        margin: 0;
+        height: auto;
+    }
+}
+
+/* Tablet */
+@media (max-width: 899px) {
+
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        margin: 0 20px 20px 20px;
+        width: 100%;
+    }
+
+    .form-container {
+        margin: 0 20px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .contact-info {
+        padding: 20px;
+        margin: 0 0 15px 0;
+        font-size: 14px;
+    }
+
+    .form-container {
+        padding: 20px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+}
