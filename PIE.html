@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laverie CMC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html{
+            background-image:url(cmc_tanger.jpg) ;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+         :root {
+            --primary-color: #38bdf8;
+            --primary-dark: #0ea5e9;
+            --secondary-color: #0f172a;
+            --accent-color: #1e3a8a;
+            --text-light: #f1f5f9;
+            --text-gray: #94a3b8;
+            --bg-dark: #020617;
+            --border-color: rgba(56, 189, 248, 0.3);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.7);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+            --font-main: 'Poppins', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background: url("background.jpeg") center/cover no-repeat;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-light);
+            padding: 20px;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+        }
+        
+        .contact-info {
+            margin: 0 auto 20px auto;
+            padding: 25px;
+            max-width: 500px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.3), rgba(255, 255, 255, 0.1));
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            font-size: 16px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeUp 1s ease;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+        
+        .contact-info:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .contact-info h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+        
+        .contact-info li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info i {
+            color: #0ea5e9;
+            font-size: 18px;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-container {
+            background: rgba(17, 17, 17, 0.98);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            animation: fadeIn 0.8s ease-out;
+            overflow-y: auto;
+            height: 630px;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-container:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .form-container img.logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #0ea5e9;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: var(--primary-color);
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+        
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 15px;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        label::before {
+            content: '•';
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            margin-top: 8px;
+            border-radius: var(--border-radius);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(30, 30, 30, 0.8);
+            color: var(--text-light);
+            font-size: 16px;
+            transition: var(--transition);
+            font-family: var(--font-main);
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1), 0 0 20px rgba(255, 215, 0, 0.2);
+            background: rgba(40, 40, 40, 0.9);
+            transform: translateY(-2px);
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        input:valid {
+            border-color: rgba(46, 204, 113, 0.6);
+            background: rgba(46, 204, 113, 0.05);
+        }
+        
+        input:invalid {
+            border-color: rgba(231, 76, 60, 0.6);
+            background: rgba(231, 76, 60, 0.05);
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+        
+        input[type="radio"] {
+            width: auto;
+            margin-right: 8px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 8px;
+            gap: 12px;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .checkbox-group label:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        button {
+            margin-top: 30px;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+            color: var(--bg-dark);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+        
+        button:active {
+            transform: translateY(1px) scale(0.98);
+        }
+        
+        button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        button:hover::after {
+            left: 100%;
+        }
+        
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            color: #2ecc71;
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--text-gray);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact-info">
+        <h2>📋Prix de la Laverie</h2>
+        <ul>
+            <li><i class="fa-solid fa-money-bill-wave"></i> Produits haute qualité : 10DH/KG</li>
+            <li><i class="fa-solid fa-money-bill-wave"></i> Produits qualité moyenne : 9DH/KG</li>
+            <li><i class="fa-solid fa-money-bill-wave"></i> Produits ordinaire : 8DH/KG</li>
+            <li><i class="fa-solid fa-shirt"></i> Repassage : 15DH/KG</li>
+            <li><i class="fa-solid fa-wind"></i> Séchage : 10DH/KG</li>
+        </ul>
+        <p><i class="fa-solid fa-envelope"></i> contact@masbanaCMC.com</p>
+        <p><i class="fa-solid fa-phone"></i> +212 6 12 34 56 78</p>
+    </div>
+
+    <div class="form-container">
+        <img src="data:image/png;base64,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"
+            alt="CMC Logo" class="logo">
+        <h1>LANDRY / LAVERIE / المغسلة</h1>
+        <form>
+            <label>Nom :</label>
+            <input type="text" name="nom" required>
+            <label>Prénom :</label>
+            <input type="text" name="prenom" required>
+            <label>CIN :</label>
+            <input type="text" name="cin" pattern="[A-Z]{2}[0-9]{6}" placeholder="LB123456" required>
+            <label>Genre :</label>
+            <input type="radio" name="genre" value="Bant" required> Fille
+            <input type="radio" name="genre" value="Wald" required> Garçon
+            <label>Pôle / Filière :</label>
+            <input type="text" name="pole" placeholder="Ex: Informatique" required>
+            <label>Téléphone :</label>
+            <input type="text" name="tel" pattern="^(06|07)[0-9]{8}$" placeholder="07XXXXXXXX" required>
+            <label>Numéro de chambre :</label>
+            <input type="number" name="chambre" min="1" max="56" placeholder="Ex:10" required>
+            <label>Date :</label>
+            <input type="date" name="date" id="date" required>
+            <label>Heure :</label>
+            <input type="time" name="heure" min="08:30" max="16:00" required>
+            <label>Qualité de nettoyage :</label>
+            <div class="radio-group">
+                <label><input type="radio" name="qualite" value="Haute" required>Produits haute qualité</label>
+                <label><input type="radio" name="qualite" value="Moyenne">Produits qualité moyenne</label>
+                <label><input type="radio" name="qualite" value="Ordinaire">Produits qualité ordinaire</label>
+            </div>
+            <label>Services supplémentaires :</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="service" value="Nettoyage">Séchage</label>
+                <label><input type="checkbox" name="service" value="Repassage">Repassage</label>
+            </div>
+            <button onclick="successMessage()">Envoyer</button>
+            <p id="msg" style="color:green; display:none;">Opération effectuée avec succès ✔</p>
+        </form>
+    </div>
+
+    <script>
+        let today = new Date().toISOString().split("T")[0];
+        document.getElementById("date").setAttribute("min", today);
+
+        function successMessage() {
+            document.getElementById("msg").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
